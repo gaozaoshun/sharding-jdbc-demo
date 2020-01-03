@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gfs.shardingjdbcdemo.dao.DemoDao">
+    <insert id="addDemo">
+        INSERT INTO uc_sys_evaluationlog (
+            student_id,
+            created_at,
+            evaluation_mode,
+            evaluation_type,
+            evaluation_id,
+            evaluation_record_id,
+            content_type,
+            content_id,
+            item_order,
+            cloud_score,
+            total_score,
+            score,
+            audio_url,
+            cloud_json,
+            study_time,
+            cloud_type
+        )
+        VALUES
+            (
+                3145,
+                '2019-01-02 10:00:00',
+                'mode',
+                'sharding',
+                NULL,
+                10021,
+                'demo',
+                101,
+                NULL,
+                100,
+                NULL,
+                100.00,
+                NULL,
+                NULL,
+                9999,
+        NULL
+            );
+    </insert>
+    <select id="queryDemo" resultType="java.util.Map">
+        select * from uc_sys_evaluationlog where id = 100
+    </select>
+
+
+</mapper>

@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    include:
+      - sharding
+  application:
+    name: sharding-jdbc-demo
+
+mybatis:
+  mapperLocations: classpath:mapper/**/*.xml
+  configuration:
+    mapUnderscoreToCamelCase: true
+    jdbc-type-for-null: null
+  type-aliases-package: com.gfs.shardingjdbcdemo.dto
